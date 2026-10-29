@@ -1,0 +1,265 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<title>About Us</title>
+<style type="text/css">
+.box{
+    width: 100%;
+    height: 1500px;
+    background-color: antiquewhite;
+}
+.head{
+    width: 100%;
+    height: 300px;
+    background-image: url(Image/Y\ \(4\).jpg);
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius: 25px;
+    background-size: cover;
+    position: relative;
+    justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.search input{
+  height: 50px;
+  width: 300px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 15px;
+  background:transparent;
+  color: #020202;
+  font-size: 14px;
+  outline: none;
+  transition: width .3s, background.3s;
+  padding-top: 2px;
+  backdrop-filter: blur(10px);
+  margin-right: 10px;
+}
+.search input::placeholder{
+  color:black; border: 0;}
+.search input:focus{
+width: 300px; background: transparent; border: 0; height: 50px;}
+
+@media (max-width: 700px){
+  .search{padding: 10px 15px;}
+  .search input {width: 100%;}
+}
+h1, h2, h3{
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+.middle{
+    width: 100%;
+    height: 700px;
+    background-color: rgb(48, 39, 29);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(Image/Y\ \(1\).jpg);
+    margin-top: 20px;
+    border-radius: 25px;
+    justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.bottom{
+    width: 100%;
+    height: 490px;
+    background-color: rgb(48, 39, 29);
+    margin-top: 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.Mid1{
+    width: 30%;
+    height: 500px;
+    float: left;
+    background-color: transparent;
+    border-right:2px solid antiquewhite ;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid2{
+    width: 30%;
+    height: 500px;
+    float: left;
+    background-color: transparent;
+    border-right:2px solid antiquewhite ;
+    border-left:2px solid antiquewhite ;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid3{
+    width: 30%;
+    height: 500px;
+    float: right;
+    background-color: transparent;
+    border-left:2px solid antiquewhite ;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid1 img{
+  display: block ;
+  margin: 0 auto;
+}
+.Mid2 img{
+  display: block ;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.Mid3 img{
+  display: block ;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.CEO{
+  float: left;
+  margin: 30px;
+  width: 45%;
+  height: 90%;
+  background: antiquewhite;
+  border: 2px solid white;
+  display: flex;
+  border-radius: 25px;
+  gap: 15px;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.CEO p{
+  margin: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="box">
+    <div class="head">
+        <nav class="navbar">
+  <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="ssw" width="200px" height="150px"></a>
+
+  <ul class="menu">
+    <li class="search">
+      <form action="#" onsubmit="return false;">
+        <input style="font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;" type="text" placeholder="Search..." aria-label="Search">
+      </form>
+    </li>
+    <li ><a href="index.html" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Home</a></li>
+    <li><a href="#" class="active" style="color: #020202; ;font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">About Us</a></li>
+    <li class="dropdown">
+      <a href="#"  style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Services ▾</a>
+      <ul class="submenu">
+        <li ><a href="#" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">House Hunting</a></li>
+        <li ><a href="#" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Hotel Finding</a></li>
+        <li ><a href="#" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Restaurant Map</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html"  style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Gallery</a></li>
+    <li><a href="faq.html"  style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">faq</a></li>
+    <li ><a href="contact.html" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: sans-serif; }
+
+  .navbar {
+    background: rgba(255, 255, 255, 0.4);
+    height: 60px;
+    display: flex;        
+    margin: auto;         
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  .brand { color: #020202; font-size: 20px; text-decoration: none; padding: 15px 0; }
+
+  .menu { display: flex; list-style: none; align-items: center; }
+.menu a {
+  display: block;
+  padding: 18px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #020202;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.menu a:hover, .menu a.active { background: rgba(255, 255, 255, 0.4); color: #fff; }
+
+.dropdown { position: relative; }
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+}
+.dropdown:hover .submenu { display: block; }
+
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+  color: #020202;
+}
+
+</style>
+<h1 style="color: antiquewhite; font-size: 100px; ">About US</h1>
+    </div>
+    <div class="middle">
+        <h1 style="color: antiquewhite; font-size: 80px;">Our Story</h1>
+        <div class="Mid1">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">Sweet Home began as a school project built around a simple idea: making it easier for people to find the places they need. What started as an academic assignment gradually became an opportunity to imagine something bigger — a platform that could make finding a home simpler for everyone.</p>
+          <img src="Image/L 1.PNG" alt="purpose" width="200px" height="200px">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;"> Make property searches easier.</p>
+        </div>
+        <div class="Mid2">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">Sweet Home is a platform designed to connect people with properties and places that match their needs. From renting and buying homes to discovering hotels and restaurants, we aim to make every search more convenient, accessible, and reliable.</p>
+          <img src="Image/L.PNG" alt="commit" width="200px" height="200px">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">Conneting people with the right places.</p>
+        </div>
+        <div class="Mid3">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">We believe every great journey begins with the right place. Our ambition is to turn the search for a property into a simpler, more meaningful experience — helping people find not just spaces, but places where life happens and memories begin.</p>
+          <img src="Image/L (3).PNG" alt="vision" width="200px" height="200px">
+          <p style="color:antiquewhite ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">Making every place feel like home.</p>
+        </div>
+    </div>
+    <div class="bottom">
+      <div class="CEO">
+        <a><img src="Image/WhatsApp Image 2026-05-01 at 15.19.29 (2).jpeg" width="110px" height="130px" style="float: left; margin: 50px;margin-bottom: 5px; position: relative; border-radius: 25px;"></a> 
+        <h1 style="float: left; font-size: 25px; color: rgb(48, 39, 29); margin-top: 10px;">C.E.O | Kaya Messia</h1><br>
+        <p style="color: rgb(48, 39, 29) ; font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 3px; text-transform: uppercase;">Driven by the vision to make property searching simplier, smarter, and more accessible <br>
+           Kaya Messia founded this platform to help people find the right place to call home. </p>
+      </div>
+    </div>
+</div>
+</body>
+</html>
