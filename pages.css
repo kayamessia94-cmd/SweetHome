@@ -198,11 +198,11 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   height: 500px;
   margin: auto;
   margin-top: 20px;
-  background: antiquewhite;
+  background-color: antiquewhite;
   border-radius: 25px;
 }
 .frent{
-  width: 410px;
+  width: 20%;
   height: 400px;
   float: left;
   margin: 30px;
@@ -215,10 +215,11 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   text-align: center;
 }
 .fsell{
-  width: 410px;
+  width: 20%;
   height: 400px;
   float: left;
   margin: 30px;
+  margin-left: 60px;
   background-color: transparent;
   border: 2px solid rgb(48, 39, 29);
   border-radius: 25px;
@@ -229,11 +230,11 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   text-align: center;
 }
 .fhotel{
-  width: 410px;
+  width: 20%;
   height: 400px;
   float: left;
   margin: 30px;
-  margin-left: 40px;
+  margin-left: 90px;
   background-color: transparent;
   border: 2px solid rgb(48, 39, 29);
   border-radius: 25px;
@@ -244,7 +245,7 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   text-align: center;
 }
 .fresto{
-  width: 410px;
+  width: 20%;
   height: 400px;
   float: right;
   margin: 30px;
