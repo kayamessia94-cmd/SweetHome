@@ -198,7 +198,7 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   height: 500px;
   margin: auto;
   margin-top: 20px;
-  background-color: antiquewhite;
+  background: antiquewhite;
   border-radius: 25px;
 }
 .frent{
