@@ -209,7 +209,7 @@ h1, h2, h3 {
 .search input:focus{
 width: 300px; background: transparent; border: 0; height: 50px;}
 
-@media (max-width: 768px){
+@media (max-width: 700px){
   .search{padding: 10px 15px;}
   .search input {width: 100%;}
 }
@@ -218,7 +218,7 @@ width: 300px; background: transparent; border: 0; height: 50px;}
   height: 500px;
   margin: auto;
   margin-top: 20px;
-  background-color: antiquewhite;
+  background:antiquewhite;
   border-radius: 25px;
 }
 .frent{
@@ -840,18 +840,4 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
 .footer-container {display: flex; flex-direction: column;}
 @media (min-width: 768px){
   .footer-container {flex-direction: row;}
-}
-@media (min-width: 768px) {
-  @media (max-width: 768px) {
-  html, body { overflow-x: hidden; }
-  * { box-sizing: border-box; }
-
-  .brand img { width: 140px; height: auto; }
-
-  p, .heading p { letter-spacing: 0.08em; font-size: 14px; line-height: 1.6; }
-  h1, h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); line-height: 1.15; }
-
-  .footer-container { display: flex; flex-direction: row; gap: 24px; }
-  .footer-column { width: 100%; }
-}
 }
