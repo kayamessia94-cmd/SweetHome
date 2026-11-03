@@ -209,7 +209,7 @@ h1, h2, h3 {
 .search input:focus{
 width: 300px; background: transparent; border: 0; height: 50px;}
 
-@media (max-width: 700px){
+@media (max-width: 768px){
   .search{padding: 10px 15px;}
   .search input {width: 100%;}
 }
