@@ -841,7 +841,7 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
 @media (min-width: 768px){
   .footer-container {flex-direction: row;}
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
   * { box-sizing: border-box; }
@@ -851,7 +851,7 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
   p, .heading p { letter-spacing: 0.08em; font-size: 14px; line-height: 1.6; }
   h1, h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); line-height: 1.15; }
 
-  .footer-container { display: flex; flex-direction: column; gap: 24px; }
+  .footer-container { display: flex; flex-direction: row; gap: 24px; }
   .footer-column { width: 100%; }
 }
 }
