@@ -822,7 +822,8 @@ form .btn { margin-top: 20px; }
     border-radius: 0 0 25px 25px;
   }
   .menu.open { display: flex; }
-  .submenu { display: block; position: static; background: transparent; padding-left: 15px; }
+  .submenu { display: none; position: static; background: transparent; padding-left: 15px; }
+  .dropdown.open .submenu { display: block; }
   .banner-text h1 { font-size: 44px; }
   .contact-grid { grid-template-columns: 1fr; }
   .panel { padding: 25px; }
