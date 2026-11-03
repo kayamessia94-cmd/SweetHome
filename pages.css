@@ -453,6 +453,222 @@ body{
     grid-template-columns: 1fr;
   }
 }
+/*----------About Us -----------*/
+.box{
+    width: 100%;
+    height: 1700px;
+    background-color: antiquewhite;
+}
+.head{
+    width: 100%;
+    height: 300px;
+    background-image: url(Image/Y\ \(4\).jpg);
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius: 25px;
+    background-size: cover;
+    position: relative;
+    justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.search input{
+  height: 50px;
+  width: 300px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 15px;
+  background:transparent;
+  color: #020202;
+  font-size: 14px;
+  outline: none;
+  transition: width .3s, background.3s;
+  padding-top: 2px;
+  backdrop-filter: blur(10px);
+  margin-right: 10px;
+}
+.search input::placeholder{
+  color:black; border: 0;}
+.search input:focus{
+width: 300px; background: transparent; border: 0; height: 50px;}
+
+@media (max-width: 700px){
+  .search{padding: 10px 15px;}
+  .search input {width: 100%;}
+}
+h1, h2, h3{
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+.middle{
+    width: 100%;
+    height: 700px;
+    background-color: rgb(48, 39, 29);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(Image/Y\ \(1\).jpg);
+    margin-top: 20px;
+    border-radius: 25px;
+    justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.bottom{
+    width: 100%;
+    height: 490px;
+    background-color: rgb(48, 39, 29);
+    margin-top: 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    justify-content: flex-start;
+  flex-direction: column;
+  text-align: center;
+}
+.Mid1{
+    width: 30%;
+    height: 500px;
+    float: left;
+    background-color: transparent;
+    border-right:2px solid antiquewhite ;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid2{
+    width: 30%;
+    height: 500px;
+    float: left;
+    background-color: transparent;
+    border-right:2px solid antiquewhite ;
+    border-left:2px solid antiquewhite ;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid3{
+    width: 30%;
+    height: 500px;
+    float: right;
+    background-color: transparent;
+    border-left:2px solid antiquewhite ;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.Mid1 img{
+  display: block ;
+  margin: 0 auto;
+}
+.Mid2 img{
+  display: block ;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.Mid3 img{
+  display: block ;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.CEO{
+  float: left;
+  margin: 30px;
+  width: 45%;
+  height: 90%;
+  background: antiquewhite;
+  border: 2px solid white;
+  display: flex;
+  border-radius: 25px;
+  gap: 15px;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.CEO p{
+  margin: 0;
+}
+.site-footer {
+  background:rgb(48, 39, 29);
+  color: antiquewhite;
+  padding: 40px 5% 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.footer-column h3 {
+  font-size: 0 0 15px;
+  margin-bottom: 16px;
+}
+
+.footer-column p{
+  font-size: 13px;
+  line-height: 1.6;
+  margin:0 0 10px ;
+}
+.footer-column a {
+  display: block;
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+
+.footer-column a:hover {
+  color: #ffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgb(48, 39, 29);
+  margin-top: 30px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+}
+.footer-bottom p{
+  margin: 0;
+}
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-column a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(250, 235, 215, 0.3);
+  margin-top: 30px;
+  padding-top: 18px;
+  font-size: 12px;
+}
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
