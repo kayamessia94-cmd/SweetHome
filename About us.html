@@ -10,13 +10,24 @@
 </style>
 
 </head>
+<script>
+  const menu = document.querySelector('menu');
+  document.querySelector('.burger').onclick = () => menu.classList.toggle('open');
 
+  // Services dropdown opens on tap on mobile
+  document.querySelector('.dropdown > a').addEventListener('click', e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle('open');
+    }
+  });
+</script>
 <body>
 <div class="box">
     <div class="head">
         <nav class="navbar">
   <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="ssw" width="200px" height="150px"></a>
-
+  <button class="burger" aria-label="Menu">&#9776;</button>
   <ul class="menu">
     <li class="search">
       <form action="#" onsubmit="return false;">
