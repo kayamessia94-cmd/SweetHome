@@ -922,18 +922,6 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
     line-height: 1.7 !important;
   }
 }
-/* let the open menu extend below the banner */
-.page-banner { overflow: visible; }
-.page-banner::before { border-radius: inherit; }   /* keeps the dark overlay rounded */
-
 @media (max-width: 900px) {
-  .menu {
-    gap: 0;
-    align-items: center;
-    padding: 10px 0 16px;
-    max-height: 80vh;          /* scrolls if the screen is very short */
-    overflow-y: auto;
-    background: rgba(255, 255, 255, 0.92);
-  }
-  .menu a { padding: 14px 15px; }
+  .page-banner { min-height: 480px; }
 }
