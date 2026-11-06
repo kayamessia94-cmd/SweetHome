@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up - Sweet Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<header class="page-banner" style="background-image:url('Image/pexels-eberhardgross-1612351.jpg')">
+  <nav class="navbar">
+      <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="Sweet Home" width="200" height="150"></a>
+      <button class="burger" aria-label="Menu">&#9776;</button>
+      <ul class="menu">
+        <li ><a href="login.html" class="active" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;border: 2px solid rgb(28, 43, 38); margin-left: 5px;">Login</a></li>
+    <li ><a href="signup.html" class="active" style="color: #020202; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; border: 2px solid rgb(28, 43, 38); margin-left: 5px; margin-right: 5px; ;">Sign-in</a></li>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Services ▾</a>
+          <ul class="submenu">
+            <li><a href="#">House Hunting</a></li>
+            <li><a href="#">Hotel Finding</a></li>
+            <li><a href="#">Restaurant Map</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        
+        <li id="profileMenu" class="dropdown" hidden>
+          <a href="#" id="profileName">Profile ▾</a>
+        </li>
+      </ul>
+    </nav>
+  <div class="banner-text">
+    <h1>Join Sweet Home</h1>
+    <p>Create an account to save and follow your searches</p>
+  </div>
+</header>
+
+<main class="content">
+  <section class="panel" style="max-width:480px;margin:0 auto;">
+    <h2>Create your account</h2>
+    <form id="signupForm">
+      <label for="name">Full name</label>
+      <input type="text" id="name" autocomplete="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" autocomplete="email" required>
+
+      <label for="password">Password (6 characters minimum)</label>
+      <input type="password" id="password" autocomplete="new-password" minlength="6" required>
+
+      <label for="confirm">Confirm password</label>
+      <input type="password" id="confirm" autocomplete="new-password" minlength="6" required>
+
+      <button class="btn" type="submit" id="submitBtn" style="width:100%">Create account</button>
+    </form>
+    <p class="form-note" id="formNote" role="status"></p>
+    <p style="margin-top:10px;font-size:14px;">Already registered? <a href="login.html" style="color:inherit"><b>Log in</b></a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Sweet Home</h3>
+      <p>Making property searches easier and connecting people with their ideal spaces.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="About us.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-column">
+      <h3>Account</h3>
+      <a href="login.html">Log in</a>
+      <a href="signup.html">Sign up</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Sweet Home. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="auth.js"></script>
+<script>
+  document.querySelector(".burger").onclick = () =>
+    document.querySelector(".menu").classList.toggle("open");
+
+  document.querySelectorAll(".dropdown > a").forEach(a =>
+    a.addEventListener("click", e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        a.parentElement.classList.toggle("open");
+      }
+    })
+  );
+</script>
+<script>
+  const note = document.getElementById("formNote");
+
+  document.getElementById("signupForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const mail = document.getElementById("email").value.trim();
+    const pass = document.getElementById("password").value;
+
+    if (pass !== document.getElementById("confirm").value) {
+      note.textContent = "The two passwords don't match.";
+      return;
+    }
+
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    note.textContent = "Creating your account...";
+    try {
+      const cred = await auth.createUserWithEmailAndPassword(mail, pass);
+      await cred.user.updateProfile({ displayName: name });
+      location.href = "index.html";
+    } catch (err) {
+      note.textContent = friendly(err.code);
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
