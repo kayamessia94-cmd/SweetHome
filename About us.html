@@ -11,16 +11,23 @@
 
 </head>
 <script>
-  const menu = document.querySelector('.menu');
-  document.querySelector('.burger').onclick = () => menu.classList.toggle('open');
 
-  // Services dropdown opens on tap on mobile
-  document.querySelector('.dropdown > a').addEventListener('click', e => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      e.currentTarget.parentElement.classList.toggle('open');
-    }
+(function () {
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.menu');
+  if (!burger || !menu) return;
+
+  burger.onclick = () => menu.classList.toggle('open');
+
+  document.querySelectorAll('.dropdown > a').forEach(a => {
+    a.onclick = e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        a.parentElement.classList.toggle('open');
+      }
+    };
   });
+})();
 </script>
 </body>
 </html>

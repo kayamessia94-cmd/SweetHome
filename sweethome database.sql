@@ -3,8 +3,7 @@ use sweethome;
 
 create table users(
 usid        int primary key,
-firstname   varchar(100),
-secondname  varchar(100),
+fullname   varchar(100),
 pp          int identity(1,1),
 email       varchar(170),
 passwords   varchar(250),
@@ -24,3 +23,4 @@ himg         int identity(1,1) primary key,
 hid          int foreign key references houses(hid),
 imagepath    varchar(300),
 );
+
