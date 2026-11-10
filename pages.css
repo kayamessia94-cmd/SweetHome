@@ -934,4 +934,7 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
   }
+  .menu a {text-align: left; padding-left: 20px;}
+
+  .head {overflow: visible;}
 }
