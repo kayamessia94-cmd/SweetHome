@@ -926,3 +926,12 @@ h1 {font-size: clamp(1.6rem, 5vw, 3rem);}
   .page-banner { min-height: 480px; }
   .head { min-height: 400px;}
 }
+@media (max-width: 900px) {
+  .menu{
+    text-align: left;
+    align-items: stretch;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+}
