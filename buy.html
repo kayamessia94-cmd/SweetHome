@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy a House | Sweet Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="listings.css">
+
+</head>
+<body>
+<header class="page-banner" style="background-image:url('Image/pexels-ahmetcotur-27626186.jpg')">
+  <nav class="navbar">
+    <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="Sweet Home" width="200" height="150"></a>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+    <ul class="menu">
+      <li><a href="login.html" class="nav-btn">Login</a></li>
+      <li><a href="signup.html" class="nav-btn">Sign-in</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About us.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Services &#9662;</a>
+        <ul class="submenu">
+          <li><a href="rent.html">Rent a Home</a></li>
+          <li><a href="buy.html">Buy a House</a></li>
+          <li><a href="sell.html">Sell a House</a></li>
+          <li><a href="hotels.html">Hotels Nearby</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="banner-text">
+    <h1>Buy a House</h1>
+    <p>More than a house, find your home</p>
+  </div>
+</header>
+
+<main class="content">
+  <section class="panel">
+    <h2>Houses for sale</h2>
+    <p>Filter by area, type and budget.</p>
+    <form class="filters" onsubmit="return false;">
+      <div><label for="f-area">Area</label><select id="f-area"><option value="">All areas</option></select></div>
+      <div><label for="f-type">Type</label><select id="f-type"><option value="">All types</option></select></div>
+      <div><label for="f-budget">Max budget</label><select id="f-budget"><option value="">Any</option></select></div>
+    </form>
+    <p class="result-count" id="count"></p>
+    <div class="cards" id="cards"></div>
+    <p class="sample-note">Sample listings. Replace them with your real properties in the <code>items</code> list at the bottom of this page.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Sweet Home</h3>
+      <p>Making property searches easier and connecting people with their ideal spaces.</p>
+      <p>Email: kayamessia94@gmail.com</p>
+      <p>Phone: +256 791 997 643</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="About us.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <a href="buy.html">Houses for Sale</a>
+      <a href="rent.html">Houses for Rent</a>
+      <a href="sell.html">Sell a House</a>
+      <a href="hotels.html">Hotels Nearby</a>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.instagram.com">Instagram</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 Sweet Home. All rights reserved.</p></div>
+</footer>
+
+<script src="site.js"></script>
+<script src="listings.js"></script>
+<script>
+  const items = [
+  {name:"3-bed family home", area:"Muyenga", type:"House", beds:3, baths:2, price:420000000, img:"Image/pexels-ahmetcotur-27626186.jpg"},
+  {name:"Luxury penthouse", area:"Kololo", type:"Apartment", beds:3, baths:3, price:950000000, img:"Image/pexels-realtor-turkiye-575431660-16959786.jpg"},
+  {name:"Starter 2-bed apartment", area:"Ntinda", type:"Apartment", beds:2, baths:2, price:260000000, img:"Image/pexels-eberhardgross-1612351.jpg"},
+  {name:"Modern villa with pool", area:"Najjera", type:"House", beds:5, baths:4, price:1200000000, img:"Image/pexels-mographe-15531226.jpg"},
+  {name:"Compact city studio", area:"Bukoto", type:"Studio", beds:1, baths:1, price:120000000, img:"Image/pexels-jdgromov-12307498.jpg"},
+  {name:"Garden bungalow", area:"Kansanga", type:"House", beds:3, baths:2, price:380000000, img:"Image/pexels-jonathanborba-36394720.jpg"}
+];
+  initListings(items, "buy");
+</script>
+</body>
+</html>

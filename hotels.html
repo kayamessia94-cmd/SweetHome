@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotels Nearby | Sweet Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="listings.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<header class="page-banner" style="background-image:url('Image/pexels-jonathanborba-36394720.jpg')">
+  <nav class="navbar">
+    <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="Sweet Home" width="200" height="150"></a>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+    <ul class="menu">
+      <li><a href="login.html" class="nav-btn">Login</a></li>
+      <li><a href="signup.html" class="nav-btn">Sign-in</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About us.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Services &#9662;</a>
+        <ul class="submenu">
+          <li><a href="rent.html">Rent a Home</a></li>
+          <li><a href="buy.html">Buy a House</a></li>
+          <li><a href="sell.html">Sell a House</a></li>
+          <li><a href="hotels.html">Hotels Nearby</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="banner-text">
+    <h1>Hotel Nearby?</h1>
+    <p>Find your ideal stay</p>
+  </div>
+</header>
+
+<main class="content">
+  <section class="panel">
+    <h2>Hotels nearby</h2>
+    <p>Tap a marker or a hotel below. Use "Near me" to sort hotels by distance from where you are.</p>
+    <button class="btn btn-wide" id="near-btn" type="button">Hotels near me</button>
+    <p class="form-note" id="near-note"></p>
+    <div id="map" aria-label="Map of hotels"></div>
+    <div class="cards" id="hotel-cards"></div>
+    <p class="sample-note">Positions are approximate. Edit the <code>hotels</code> list at the bottom of this page to add or correct places.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Sweet Home</h3>
+      <p>Making property searches easier and connecting people with their ideal spaces.</p>
+      <p>Email: kayamessia94@gmail.com</p>
+      <p>Phone: +256 791 997 643</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="About us.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <a href="buy.html">Houses for Sale</a>
+      <a href="rent.html">Houses for Rent</a>
+      <a href="sell.html">Sell a House</a>
+      <a href="hotels.html">Hotels Nearby</a>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.instagram.com">Instagram</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 Sweet Home. All rights reserved.</p></div>
+</footer>
+
+<script src="site.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  // name, area, lat, lng  -> edit / add your own hotels here
+  const hotels = [
+    {name:"Kampala Serena Hotel", area:"Nakasero", lat:0.3181, lng:32.5917},
+    {name:"Sheraton Kampala Hotel", area:"Nakasero", lat:0.3180, lng:32.5890},
+    {name:"Kampala Marriott Hotel", area:"Kampala Central", lat:0.3190, lng:32.5960},
+    {name:"Emin Pasha Hotel", area:"Kololo", lat:0.3254, lng:32.5906},
+    {name:"Protea Hotel Kampala Skyz", area:"Naguru", lat:0.3402, lng:32.6153},
+    {name:"Speke Resort Munyonyo", area:"Munyonyo", lat:0.2399, lng:32.6234}
+  ];
+
+  const map = L.map('map').setView([0.3136, 32.5811], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const markers = hotels.map(h => {
+    const m = L.marker([h.lat, h.lng]).addTo(map);
+    m.bindPopup('<strong>' + h.name + '</strong><br>' + h.area);
+    return m;
+  });
+
+  const box = document.getElementById('hotel-cards');
+  function km(a, b, c, d) {
+    const R = 6371, r = x => x * Math.PI / 180;
+    const dLat = r(c - a), dLng = r(d - b);
+    const s = Math.sin(dLat / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(s));
+  }
+  function draw(dist) {
+    const order = hotels.map((h, i) => i);
+    if (dist) order.sort((a, b) => dist[a] - dist[b]);
+    box.innerHTML = '';
+    order.forEach(i => {
+      const h = hotels[i];
+      const d = dist ? '<p class="meta">' + dist[i].toFixed(1) + ' km away</p>' : '';
+      const el = document.createElement('div');
+      el.className = 'card hotel';
+      el.innerHTML = '<div class="card-body"><h3>' + h.name + '</h3><p class="meta">' + h.area + '</p>' + d +
+        '<div class="card-actions"><button class="btn btn-sm" data-i="' + i + '" type="button">Show on map</button>' +
+        '<a class="btn btn-sm btn-link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' +
+        h.lat + ',' + h.lng + '">Directions</a></div></div>';
+      box.appendChild(el);
+    });
+  }
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button[data-i]');
+    if (!b) return;
+    const i = +b.dataset.i;
+    map.flyTo([hotels[i].lat, hotels[i].lng], 15);
+    markers[i].openPopup();
+    document.getElementById('map').scrollIntoView({behavior: 'smooth', block: 'center'});
+  });
+  draw();
+
+  let me;
+  document.getElementById('near-btn').addEventListener('click', () => {
+    const note = document.getElementById('near-note');
+    if (!navigator.geolocation) { note.textContent = 'Location is not supported on this browser.'; return; }
+    note.textContent = 'Finding your position...';
+    navigator.geolocation.getCurrentPosition(pos => {
+      const { latitude: la, longitude: lo } = pos.coords;
+      if (me) map.removeLayer(me);
+      me = L.circleMarker([la, lo], {radius: 9, color: '#30271d', fillColor: '#c8a26b', fillOpacity: 1}).addTo(map).bindPopup('You are here');
+      const dist = hotels.map(h => km(la, lo, h.lat, h.lng));
+      draw(dist);
+      const nearest = dist.indexOf(Math.min(...dist));
+      map.fitBounds([[la, lo], [hotels[nearest].lat, hotels[nearest].lng]], {padding: [60, 60]});
+      note.textContent = 'Sorted by distance from you.';
+    }, () => { note.textContent = 'Could not get your location. Allow location access and try again.'; });
+  });
+</script>
+</body>
+</html>

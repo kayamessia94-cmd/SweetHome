@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell a House | Sweet Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="listings.css">
+
+</head>
+<body>
+<header class="page-banner" style="background-image:url('Image/pexels-jdgromov-12307498.jpg')">
+  <nav class="navbar">
+    <a class="brand" href="index.html"><img src="Image/SW2.PNG" alt="Sweet Home" width="200" height="150"></a>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+    <ul class="menu">
+      <li><a href="login.html" class="nav-btn">Login</a></li>
+      <li><a href="signup.html" class="nav-btn">Sign-in</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About us.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Services &#9662;</a>
+        <ul class="submenu">
+          <li><a href="rent.html">Rent a Home</a></li>
+          <li><a href="buy.html">Buy a House</a></li>
+          <li><a href="sell.html">Sell a House</a></li>
+          <li><a href="hotels.html">Hotels Nearby</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="banner-text">
+    <h1>Sell a House</h1>
+    <p>The key for a new start</p>
+  </div>
+</header>
+
+<main class="content">
+  <section class="panel">
+    <h2>Sell your house with us</h2>
+    <p>Tell us about your property and we will get back to you. It takes two minutes.</p>
+    <div class="sell-grid">
+      <form id="sell-form">
+        <label for="s-name">Your name</label>
+        <input id="s-name" name="name" type="text" required>
+        <label for="s-phone">Phone</label>
+        <input id="s-phone" name="phone" type="tel" required>
+        <label for="s-email">Email</label>
+        <input id="s-email" name="email" type="email" required>
+        <label for="s-area">Area / location</label>
+        <input id="s-area" name="area" type="text" placeholder="e.g. Muyenga, Kampala" required>
+        <label for="s-type">Property type</label>
+        <select id="s-type" name="type">
+          <option>House</option><option>Apartment</option><option>Studio</option><option>Land</option>
+        </select>
+        <label for="s-price">Asking price (UGX)</label>
+        <input id="s-price" name="price" type="text" placeholder="e.g. 350,000,000">
+        <label for="s-desc">Description</label>
+        <textarea id="s-desc" name="desc" placeholder="Bedrooms, bathrooms, size, special features..."></textarea>
+        <button class="btn" type="submit">Send</button>
+        <p class="form-note" id="sell-note"></p>
+      </form>
+
+      <div class="steps">
+        <div class="card step"><span class="step-no">1</span><div class="card-body"><h3>Tell us about it</h3><p>Fill in the form with the basics of your property.</p></div></div>
+        <div class="card step"><span class="step-no">2</span><div class="card-body"><h3>We list and promote</h3><p>Your house is presented to people looking to buy.</p></div></div>
+        <div class="card step"><span class="step-no">3</span><div class="card-body"><h3>Meet serious buyers</h3><p>We connect you with interested buyers and help with visits.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Sweet Home</h3>
+      <p>Making property searches easier and connecting people with their ideal spaces.</p>
+      <p>Email: kayamessia94@gmail.com</p>
+      <p>Phone: +256 791 997 643</p>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="About us.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <a href="buy.html">Houses for Sale</a>
+      <a href="rent.html">Houses for Rent</a>
+      <a href="sell.html">Sell a House</a>
+      <a href="hotels.html">Hotels Nearby</a>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.instagram.com">Instagram</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 Sweet Home. All rights reserved.</p></div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  document.getElementById('sell-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const f = new FormData(this);
+    const body = [
+      'Name: ' + f.get('name'), 'Phone: ' + f.get('phone'), 'Email: ' + f.get('email'),
+      'Location: ' + f.get('area'), 'Type: ' + f.get('type'),
+      'Asking price (UGX): ' + f.get('price'), '', f.get('desc')
+    ].join('\n');
+    document.getElementById('sell-note').textContent = 'Opening your email app to send the request...';
+    window.location.href = 'mailto:kayamessia94@gmail.com?subject=' +
+      encodeURIComponent('I want to sell a property') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
